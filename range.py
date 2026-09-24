@@ -5,9 +5,3 @@ def fibonacci(n):
         a, b = b, a + b
 
 fibonacci(10)
-
-edgy8ewuiej
-sjwuyieoeioe
-qwertyuiop
-1qazxcvbnm
-6890pkm
