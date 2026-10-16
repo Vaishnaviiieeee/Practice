@@ -3,9 +3,10 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+        self.prev = None
 
 
-class LinkedList:
+class doublyLinkedList:
     def __init__(self):
         self.head = None
 
@@ -19,6 +20,7 @@ class LinkedList:
         while temp.next:
             temp = temp.next
         temp.next = new_node
+        new_node.prev = temp
 
     # Traverse and print the nodes
     def display(self):
@@ -36,6 +38,8 @@ class LinkedList:
 
         if pos == 0:
             new_node.next = self.head
+            if self.head:
+                self.head.prev = new_node
             self.head = new_node
             return
 
@@ -52,6 +56,8 @@ class LinkedList:
 
         new_node.next = temp.next
         temp.next = new_node
+        if new_node.next:
+            new_node.next.prev = new_node
 
     # Delete a node at a given position (0-based)
     def delete(self, pos):
@@ -61,6 +67,8 @@ class LinkedList:
 
         if pos == 0:
             self.head = self.head.next
+            if self.head:
+                self.head.prev = None
             return
 
         temp = self.head
@@ -75,10 +83,12 @@ class LinkedList:
             return
 
         temp.next = temp.next.next
+        if temp.next:
+            temp.next.prev = temp
 
 
 # Create linked list
-List = LinkedList()
+List = doublyLinkedList()
 
 List.append(Node(1))
 List.append(Node(2))
