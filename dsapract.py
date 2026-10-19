@@ -30,6 +30,30 @@ class doublyLinkedList:
             temp = temp.next
         print("None")
 
+    # reverse the linked list
+    def printreverse(self):
+        temp = self.head
+        print("Reversed List:")
+        if temp is None:
+            print("None")
+            return
+        while temp.next:
+            temp = temp.next
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.prev        
+        print("None")
+
+    # w.a.p to count of a given number in DLL
+    def count(self, number):
+        count = 0
+        temp = self.head
+        while temp:
+            if temp.data == number:
+                count += 1
+            temp = temp.next
+        return count 
+
     # # Insert a node at a given position (0-based)
     # def insert(self, new_node, pos):
     #     if pos < 0:
@@ -97,6 +121,7 @@ List.append(Node(40))
 List.append(Node(50))
 List.append(Node(60))
 List.append(Node(70))
+List.append(Node(50))
 
 print("Elements:")
 List.display()
@@ -108,3 +133,7 @@ List.display()
 List.delete(0)
 print("After Deletion:")
 List.display()
+
+List.printreverse()
+
+print(f"Count of 50: {List.count(50)}")
