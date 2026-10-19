@@ -30,34 +30,34 @@ class doublyLinkedList:
             temp = temp.next
         print("None")
 
-    # Insert a node at a given position (0-based)
-    def insert(self, new_node, pos):
-        if pos < 0:
-            print("Invalid position")
-            return
+    # # Insert a node at a given position (0-based)
+    # def insert(self, new_node, pos):
+    #     if pos < 0:
+    #         print("Invalid position")
+    #         return
 
-        if pos == 0:
-            new_node.next = self.head
-            if self.head:
-                self.head.prev = new_node
-            self.head = new_node
-            return
+    #     if pos == 0:
+    #         new_node.next = self.head
+    #         if self.head:
+    #             self.head.prev = new_node
+    #         self.head = new_node
+    #         return
 
-        temp = self.head
-        for _ in range(pos - 1):
-            if temp is None:
-                print("Invalid position")
-                return
-            temp = temp.next
+    #     temp = self.head
+    #     for _ in range(pos - 1):
+    #         if temp is None:
+    #             print("Invalid position")
+    #             return
+    #         temp = temp.next
 
-        if temp is None:
-            print("Invalid position")
-            return
+    #     if temp is None:
+    #         print("Invalid position")
+    #         return
 
-        new_node.next = temp.next
-        temp.next = new_node
-        if new_node.next:
-            new_node.next.prev = new_node
+    #     new_node.next = temp.next
+    #     temp.next = new_node
+    #     if new_node.next:
+    #         new_node.next.prev = new_node
 
     # Delete a node at a given position (0-based)
     def delete(self, pos):
@@ -90,20 +90,20 @@ class doublyLinkedList:
 # Create linked list
 List = doublyLinkedList()
 
-List.append(Node(1))
-List.append(Node(2))
-List.append(Node(3))
-List.append(Node(4))
-List.append(Node(5))
-List.append(Node(6))
-List.append(Node(7))
+List.append(Node(10))
+List.append(Node(20))
+List.append(Node(30))
+List.append(Node(40))
+List.append(Node(50))
+List.append(Node(60))
+List.append(Node(70))
 
 print("Elements:")
 List.display()
 
-List.insert(Node(8), 3)
-print("After Insertion:")
-List.display()
+# List.insert(Node(8), 3)
+# print("After Insertion:")
+# List.display()
 
 List.delete(0)
 print("After Deletion:")
